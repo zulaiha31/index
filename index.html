@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .container {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #28a745;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      font-size: 16px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Login</h1>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button type="submit" class="button">Login</button>
+  </form>
+</div>
+
+<script>
+  const userDatabase = {
+    user1: "pass1",
+    user2: "pass2",
+    user3: "pass3",
+    user4: "pass4",
+    user5: "pass5",
+    user6: "pass6",
+    user7: "pass7",
+    user8: "pass8",
+    user9: "pass9",
+    user10: "pass10",
+    user11: "pass11",
+    user12: "pass12",
+    user13: "pass13",
+    user14: "pass14",
+    user15: "pass15",
+    user16: "pass16",
+    user17: "pass17",
+    user18: "pass18",
+    user19: "pass19",
+    user20: "pass20",
+    user21: "pass21",
+    user22: "pass22",
+    user23: "pass23",
+    user24: "pass24",
+    user25: "pass25",
+    user26: "pass26",
+    user27: "pass27",
+    user28: "pass28",
+    user29: "pass29",
+    user30: "pass30"
+  };
+
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (userDatabase[username] === password) {
+      localStorage.setItem("loggedInUser", username);
+      window.location.href = "home.html";
+    } else {
+      alert("Username atau password salah!");
+    }
+  });
+</script>
+
+</body>
+</html>
